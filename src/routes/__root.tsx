@@ -11,6 +11,9 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { StudyProvider } from "@/lib/study-store";
+import { StudyShell } from "@/components/StudyShell";
+
 
 function NotFoundComponent() {
   return (
