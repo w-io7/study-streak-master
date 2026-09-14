@@ -39,9 +39,10 @@ export function EntryCard({
   entry: Entry;
   boxNumber: number;
   title: string;
-  badge?: string;
-  body?: string;
+  badge?: string | undefined;
+  body?: string | undefined;
 }) {
+
   const { toggleStudied, addExtraField, removeExtraField, removeEntry } = useStudy();
   const [open, setOpen] = useState(false);
   const [label, setLabel] = useState("");

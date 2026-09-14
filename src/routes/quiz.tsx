@@ -49,16 +49,16 @@ function QuizPage() {
       const result = await makeQuiz({
         data: {
           vocabulary: vocab.map((e) =>
-            [e.fields.word, e.fields.pos, e.fields.meaning, ...e.extras.map((x) => `${x.label}: ${x.value}`)]
+            [e.fields["word"], e.fields["pos"], e.fields["meaning"], ...e.extras.map((x) => `${x.label}: ${x.value}`)]
               .filter(Boolean)
               .join(" — "),
           ),
           grammar: grammar.map((e) =>
-            [e.fields.rule, e.fields.brief, ...e.extras.map((x) => `${x.label}: ${x.value}`)]
+            [e.fields["rule"], e.fields["brief"], ...e.extras.map((x) => `${x.label}: ${x.value}`)]
               .filter(Boolean)
               .join(" — "),
           ),
-          notes: notes.map((e) => [e.fields.title, e.fields.text].filter(Boolean).join(" — ")),
+          notes: notes.map((e) => [e.fields["title"], e.fields["text"]].filter(Boolean).join(" — ")),
         },
       });
       setQuestions(result.questions);

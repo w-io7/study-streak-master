@@ -143,9 +143,9 @@ function VocabularyPage() {
                 key={entry.id}
                 entry={entry}
                 boxNumber={entries.length - i}
-                title={entry.fields.word ?? "—"}
-                badge={entry.fields.pos || undefined}
-                body={entry.fields.meaning || undefined}
+                title={entry.fields["word"] ?? "—"}
+                badge={entry.fields["pos"] || undefined}
+                body={entry.fields["meaning"] || undefined}
               />
             ))}
           </div>

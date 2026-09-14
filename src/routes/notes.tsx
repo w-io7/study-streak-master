@@ -115,8 +115,8 @@ function NotesPage() {
                 key={entry.id}
                 entry={entry}
                 boxNumber={entries.length - i}
-                title={entry.fields.title ?? "Note"}
-                body={entry.fields.text || undefined}
+                title={entry.fields["title"] ?? "Note"}
+                body={entry.fields["text"] || undefined}
               />
             ))}
           </div>

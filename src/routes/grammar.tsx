@@ -112,9 +112,9 @@ function GrammarPage() {
                 key={entry.id}
                 entry={entry}
                 boxNumber={entries.length - i}
-                title={entry.fields.rule ?? "—"}
+                title={entry.fields["rule"] ?? "—"}
                 badge="Rule"
-                body={entry.fields.brief || undefined}
+                body={entry.fields["brief"] || undefined}
               />
             ))}
           </div>
