@@ -117,7 +117,8 @@ export function StudyProvider({ children }: { children: ReactNode }) {
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
-    setState(read());
+    setState((current) => (current === emptyState ? read() : current));
+
     setHydrated(true);
   }, []);
 
