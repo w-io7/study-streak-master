@@ -19,6 +19,15 @@
  */
 
 @theme inline {
+  --font-display: "Anton", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: "Inter", sans-serif;
+  --color-paper: var(--background);
+  --color-surface: var(--card);
+  --color-ink: var(--foreground);
+  --color-line: var(--border);
+  --color-accent-warm: var(--accent-warm);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -26,6 +35,7 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -63,39 +73,41 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  --background: oklch(0.949 0.017 88);
+  --foreground: oklch(0.208 0.008 70);
+  --card: oklch(0.978 0.01 90);
+  --card-foreground: oklch(0.208 0.008 70);
+  --popover: oklch(0.978 0.01 90);
+  --popover-foreground: oklch(0.208 0.008 70);
+  --primary: oklch(0.505 0.163 34);
+  --primary-foreground: oklch(0.978 0.01 90);
+  --secondary: oklch(0.897 0.021 88);
+  --secondary-foreground: oklch(0.208 0.008 70);
+  --muted: oklch(0.918 0.018 88);
+  --muted-foreground: oklch(0.58 0.014 85);
+  --accent: oklch(0.897 0.021 88);
+  --accent-foreground: oklch(0.208 0.008 70);
+  --accent-warm: oklch(0.505 0.163 34);
+  --destructive: oklch(0.505 0.163 34);
+  --destructive-foreground: oklch(0.978 0.01 90);
+  --border: oklch(0.897 0.021 88);
+  --input: oklch(0.897 0.021 88);
+  --ring: oklch(0.505 0.163 34);
+  --chart-1: oklch(0.505 0.163 34);
+  --chart-2: oklch(0.58 0.014 85);
+  --chart-3: oklch(0.7 0.09 60);
+  --chart-4: oklch(0.65 0.11 130);
+  --chart-5: oklch(0.55 0.08 250);
+  --sidebar: oklch(0.978 0.01 90);
+  --sidebar-foreground: oklch(0.208 0.008 70);
+  --sidebar-primary: oklch(0.505 0.163 34);
+  --sidebar-primary-foreground: oklch(0.978 0.01 90);
+  --sidebar-accent: oklch(0.897 0.021 88);
+  --sidebar-accent-foreground: oklch(0.208 0.008 70);
+  --sidebar-border: oklch(0.897 0.021 88);
+  --sidebar-ring: oklch(0.505 0.163 34);
 }
+
 
 .dark {
   --background: oklch(0.129 0.042 264.695);
@@ -141,4 +153,26 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@utility rise {
+  animation: rise 0.5s cubic-bezier(0.32, 0.72, 0, 1) both;
 }
